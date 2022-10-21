@@ -16,6 +16,7 @@
 - 별도의 process로 MySQL_Handler 코드를 inport 하고 add_data에 redis에서 pop한 데이터를 tuple로 변환.
 - 그 후 item_insert를 실행 하면 MYSQL에 수집한 데이터를 원하는 개수씩 한번에 bulk insert.
 - MySQL_Handler의 schema는 본인의 코드에 맞게 변경을 하여야 함.
+- Redis Queue에 lpop 대신 brpop과 같은 blocking pop을 사용하여도 무방함.
 
 ## Todo List
 - schema를 json이나 xml, excel과 같은 형식으로 넣으면 자동으로 분석하여 data를 insert하도록 MySQL Handler 변경 필요.
