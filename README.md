@@ -13,7 +13,8 @@
 - Git에서 코드를 clone.
 - clone한 코드를 본인의 scrapy pipeline과 같은 디렉터리에 복사.
 - pipeline에 RedisQueue import 후 spider를 실행하면 redis로 수집한 데이터를 push 함.
-- 별도의 process로 MySQL_Handler 코드를 실행하면 MYSQL에 수집한 데이터를 원하는 개수씩 한번에 bulk insert.
+- 별도의 process로 MySQL_Handler 코드를 inport 하고 add_data에 redis에서 pop한 데이터를 tuple로 변환.
+- 그 후 item_insert를 실행 하면 MYSQL에 수집한 데이터를 원하는 개수씩 한번에 bulk insert.
 - MySQL_Handler의 schema는 본인의 코드에 맞게 변경을 하여야 함.
 
 ## Todo List
